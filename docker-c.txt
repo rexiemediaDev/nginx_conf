@@ -1,0 +1,1 @@
+docker exec -it reverse_proxy_demo bash
