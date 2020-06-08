@@ -47,8 +47,10 @@ Authentication:
 
 mkdir -p auth /etc/nginx/.htpasswd
 
+apt-get update
 apt-get install nghttp2-client
 apt-get install apache2-utils
+Best rm default installed nginx module and install all afresh
 
 htpasswd -c /etc/nginx/.htpasswd #to generate a password and user
 nginx:
@@ -68,3 +70,5 @@ registry:
   image: registry:2
   volumes:
     - ./data:/var/lib/registry
+
+certbot and letsencrypt
