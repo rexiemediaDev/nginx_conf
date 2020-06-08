@@ -29,5 +29,20 @@ cd into it
 openssl req -x509 -days 10 -nodes -netkey rsa:2048 -keyout /etc/nginx/ssl/self.key -out /etc/nginx/ssl/self.crt 
 to generate a selfsigned public and private key
 
-openssl dhparams 2048 -out /etc/nginx/ssl/dhparams.pem to create the file for the server consumption 
+openssl dhparams 2048 -out /etc/nginx/ssl/dhparams.pem to create the file for the server consumption
 
+using siege to test concurrent request rate
+siege -v -r 2 -c 5 uri
+where v for verbose r for rate c for concurrent which will result in 10 hits
+
+setting rate limitin
+limit_req_zone $server_name will apply to the server name.
+
+limit_req_zone $binary_remote_addr will apply to per user as since each has unique ip address suitable for preventing
+brute force and suitable for loging route.
+
+limit_req_zone $request_uri will apply to every uri request.
+
+Authentication:
+
+mkdir -p auth /etc/nginx/.htpasswd
