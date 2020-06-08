@@ -1,1 +1,20 @@
 docker exec -it reverse_proxy_demo bash
+
+
+cat filename.ext will open the content of the file in the shell enviroment
+
+echo '' > filename.ext will empty that file 
+
+ls -l will list the content of the directory
+
+systemctl reload nginx will reload the server
+
+echo '<?php phpinfo(); ?>' > /sites/demo/info.php will create that file in the site location
+
+./configure --help to show all configuration command 
+
+./configure --help | grep dynamic filters help command for dynamic modules
+
+all configure under etc folder
+
+nginx -V shows all existing configured modules
