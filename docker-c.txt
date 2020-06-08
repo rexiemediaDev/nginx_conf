@@ -29,3 +29,5 @@ cd into it
 openssl req -x509 -days 10 -nodes -netkey rsa:2048 -keyout /etc/nginx/ssl/self.key -out /etc/nginx/ssl/self.crt 
 to generate a selfsigned public and private key
 
+openssl dhparams 2048 -out /etc/nginx/ssl/dhparams.pem to create the file for the server consumption 
+
