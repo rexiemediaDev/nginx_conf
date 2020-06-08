@@ -18,3 +18,14 @@ echo '<?php phpinfo(); ?>' > /sites/demo/info.php will create that file in the s
 all configure under etc folder
 
 nginx -V shows all existing configured modules
+
+nano filename to open a file for editing on bash
+
+./configure --help | grep http_v2 which require ssl to configure.
+
+mkdir /etc/nginx/ssl 
+
+cd into it
+openssl req -x509 -days 10 -nodes -netkey rsa:2048 -keyout /etc/nginx/ssl/self.key -out /etc/nginx/ssl/self.crt 
+to generate a selfsigned public and private key
+
